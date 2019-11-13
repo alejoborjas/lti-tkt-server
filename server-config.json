@@ -1,0 +1,12 @@
+{
+    "providerDomain": "http://localhost",
+    "providerPort": "3001",
+    "bbUrl": "https://ec2-54-90-232-164.compute-1.amazonaws.com",
+    "apiKey": "78c3ebe3-2029-4025-bd78-446553e975cd",
+    "apiSecret": "EWu6EoUpdWZWvntoWiUpJnnv4Wl2hIKn",
+    "ltiConsumerKeys": {
+        "key" : "secret",
+        "key2" : "secret2",
+        "consumerKey" : "sharedSecret"
+    }
+}
