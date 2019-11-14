@@ -26,9 +26,7 @@ module.exports = (app) => {
             err.status = 400;
             return next(err);
         }
-
         console.log(req.body);
-
         const consumerKey = req.body.oauth_consumer_key;
         if (!consumerKey) {
             let err = new Error('Expected a consumer');
@@ -45,6 +43,13 @@ module.exports = (app) => {
 
             provider.valid_request(req, (err, isValid) => {
                 if (isValid) {
+                    let keys = Object.keys(req.body).sort();
+                    console.log('keys', keys);
+                    let ltiParams = [];
+                    for (let i = 0, length = keys.length; i < length; i++) {
+                        ltiParams[keys[i]] = req.body[keys[i]];
+                    }
+                    console.log("This are are LTI params: " , ltiParams);
                     return res.redirect(301, 'http://localhost:3000/');
                 } else {
                     return next(err);
